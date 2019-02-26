@@ -8,7 +8,7 @@
 
 ## Demo Figure
 <p align="center">
-<img src="https://code.mkurl.cn/iOSBasis/MKBadge/raw/master/1.png" title="演示图">
+<img src="https://github.com/LiuSky/MKBadge/blob/master/1.png?raw=true" title="演示图">
 </p>
 
 ## Usage
