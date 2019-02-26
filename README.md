@@ -6,7 +6,7 @@
 ## Installation Cocoapods
 <pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.0.0'</code></pre>
 
-## Demo Figure
+## Demo Figure
 <p align="center">
 <img src="https://github.com/LiuSky/MKBadge/blob/master/1.png?raw=true" title="演示图">
 </p>
