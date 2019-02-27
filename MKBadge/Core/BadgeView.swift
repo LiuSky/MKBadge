@@ -44,7 +44,7 @@ public class Badge {
             case .count(let count):
                 badgeView.isHidden = count == 0
                 let string: String
-                if count > 99 {
+                if count > maxNumber {
                     string = "99+"
                 } else {
                     string = "\(count)"
@@ -66,7 +66,11 @@ public class Badge {
         }
     }
     
+    /// 默认最大数量
+    public var maxNumber: Int = 99
     
+    
+    /// 字体大小
     public var fontSize: CGFloat = 13 {
         didSet {
             if case .count = type {

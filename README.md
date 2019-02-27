@@ -4,7 +4,7 @@
 - Swift 4.2+
 
 ## Installation Cocoapods
-<pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.0.0'</code></pre>
+<pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.0.1'</code></pre>
 
 ## Demo Figure
 <p align="center">
