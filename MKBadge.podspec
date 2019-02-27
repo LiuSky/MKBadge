@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name             = 'MKBadge'
-  s.version          = '1.0.0'
+  s.version          = '1.0.2'
   s.summary          = '角标组件'
 
   s.description      = <<-DESC

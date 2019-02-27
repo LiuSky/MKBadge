@@ -18,7 +18,7 @@ private var badgeKey: Void?
 // MARK: - 扩展Badge角标
 public extension UIView {
     
-    internal var badge: Badge {
+    public var badge: Badge {
         get {
             let badge: Badge
             if let value = objc_getAssociatedObject(self, &badgeKey) as? Badge {
