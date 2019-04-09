@@ -1,10 +1,10 @@
 ## Requirements:
 - **iOS** 9.0+
 - Xcode 10.1+
-- Swift 4.2+
+- Swift 5.0
 
 ## Installation Cocoapods
-<pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.0.2'</code></pre>
+<pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.1.0'</code></pre>
 
 ## Demo Figure
 <p align="center">

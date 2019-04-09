@@ -18,7 +18,7 @@ private var badgeKey: Void?
 // MARK: - 扩展Badge角标
 public extension UIView {
     
-    public var badge: Badge {
+    var badge: Badge {
         get {
             let badge: Badge
             if let value = objc_getAssociatedObject(self, &badgeKey) as? Badge {
@@ -237,7 +237,7 @@ public class Badge {
 // MARK: - <#Description#>
 internal extension String {
     
-    internal func boundingWidth(with font: UIFont) -> CGFloat {
+    func boundingWidth(with font: UIFont) -> CGFloat {
         let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: font.lineHeight)
         let preferredRect = (self as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(preferredRect.width)

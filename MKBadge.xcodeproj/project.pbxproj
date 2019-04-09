@@ -163,6 +163,7 @@
 					};
 					333B68DB2213A8E5004B68DF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 333B68C72213A8E3004B68DF;
 					};
 				};
@@ -386,7 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MKBadge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -405,7 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MKBadge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -425,7 +426,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MKBadgeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MKBadge.app/MKBadge";
 			};
@@ -446,7 +447,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MKBadgeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MKBadge.app/MKBadge";
 			};
