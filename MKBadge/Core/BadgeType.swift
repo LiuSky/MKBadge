@@ -16,11 +16,13 @@ import Foundation
 /// - point: 点
 /// - count: 数量
 /// - custom: 自定义文本
+/// - custom: 自定义富文本
 public enum BadgeType {
     case none
     case point
     case count(Int)
     case custom(String)
+    case customRichText(_ attributedString: NSAttributedString, _ height: CGFloat?, _ cornerRadius: CGFloat?)
 }
 
 

@@ -11,7 +11,16 @@ import Foundation
 
 
 /// MARK - 角标View
-open class BadgeView: UILabel {}
+open class BadgeView: UILabel {
+    
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if let superview = superview {
+            return superview
+        } else {
+            return super.hitTest(point, with: event)
+        }
+    }
+}
 
 private var badgeKey: Void?
 
@@ -41,6 +50,7 @@ public class Badge {
             switch type {
             case .none, .point:
                 badgeView.text = nil
+                badgeView.attributedText = nil
             case .count(let count):
                 badgeView.isHidden = count == 0
                 let string: String
@@ -49,10 +59,21 @@ public class Badge {
                 } else {
                     string = "\(count)"
                 }
+                badgeView.attributedText = nil
                 badgeView.text = string
             case .custom(let result):
                 badgeView.isHidden = result.count == 0
+                badgeView.attributedText = nil
                 badgeView.text = result
+            case let .customRichText(attributedString, height, _):
+                badgeView.isHidden = false
+                badgeView.backgroundColor = .clear
+                badgeView.numberOfLines = 0
+                if let height = height {
+                    self.height = height
+                }
+                badgeView.text = nil
+                badgeView.attributedText = attributedString
             }
             remakeConstraints()
         }
@@ -201,34 +222,59 @@ public class Badge {
     }
     
     private func updateWidthConstraint() {
-        widthConstraint?.isActive = false
+        
+        let width: CGFloat?
         switch type {
         case .none:
-            widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: 0)
+            width = 0
         case .point:
-            widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: height)
+            width = height
         case .count(let count):
             if count > 0, let string = badgeView.text {
                 if count >= 10 {
-                    widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: string.boundingWidth(with: badgeView.font)+(height-"0".boundingWidth(with: badgeView.font)))
+                    width = string.boundingWidth(with: badgeView.font)+(height-"0".boundingWidth(with: badgeView.font))
                 } else {
-                    widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: height)
+                    width = height
                 }
             } else {
-                widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: 0)
+                width = 0
             }
         case .custom(let result):
             if result.count > 0, let string = badgeView.text {
-                widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: string.boundingWidth(with: badgeView.font)+(height-"0".boundingWidth(with: badgeView.font)))
+                width = string.boundingWidth(with: badgeView.font)+(height-"0".boundingWidth(with: badgeView.font))
             } else {
-                widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: 0)
+                width = 0
             }
+        case .customRichText:
+            width = nil
         }
-        widthConstraint?.isActive = true
+        if let width = width {
+            if let widthConstraint = widthConstraint {
+                widthConstraint.constant = width
+            } else {
+                widthConstraint = badgeView.widthAnchor.constraint(equalToConstant: width)
+                widthConstraint?.isActive = true
+            }
+        } else {
+            widthConstraint?.isActive = false
+            widthConstraint = nil
+        }
     }
     
     private func updateCornerRadius() {
-        badgeView.layer.cornerRadius = height/2
+        
+        switch type {
+        case .none:
+            break
+        case .point, .count, .custom(_):
+            badgeView.layer.cornerRadius = height/2
+        case let .customRichText(_, _, cornerRadius):
+            if let cornerRadius = cornerRadius {
+                badgeView.layer.cornerRadius = cornerRadius
+            } else {
+                badgeView.layer.cornerRadius = height/2
+            }
+        }
     }
     
 }
