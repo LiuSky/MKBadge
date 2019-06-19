@@ -15,7 +15,7 @@ import Foundation
 /// - none: 空
 /// - point: 点
 /// - count: 数量
-/// - custom: 自定义文本
+/// - custom: 自定义字符串
 /// - custom: 自定义富文本
 public enum BadgeType {
     case none

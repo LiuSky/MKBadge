@@ -55,7 +55,7 @@ public class Badge {
                 badgeView.isHidden = count == 0
                 let string: String
                 if count > maxNumber {
-                    string = "99+"
+                    string = "\(maxNumber)+"
                 } else {
                     string = "\(count)"
                 }
