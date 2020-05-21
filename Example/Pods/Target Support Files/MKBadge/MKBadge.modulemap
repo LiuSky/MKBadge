@@ -1,0 +1,6 @@
+framework module MKBadge {
+  umbrella header "MKBadge-umbrella.h"
+
+  export *
+  module * { export * }
+}

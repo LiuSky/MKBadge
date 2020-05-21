@@ -1,10 +1,16 @@
+# MKBadge
+
+[![Version](https://img.shields.io/cocoapods/v/MKBadge.svg?style=flat)](https://cocoapods.org/pods/MKBadge)
+[![License](https://img.shields.io/cocoapods/l/MKBadge.svg?style=flat)](https://cocoapods.org/pods/MKBadge)
+[![Platform](https://img.shields.io/cocoapods/p/MKBadge.svg?style=flat)](https://cocoapods.org/pods/MKBadge)
+
 ## Requirements:
 - **iOS** 9.0+
 - Xcode 10.1+
 - Swift 5.0
 
 ## Installation Cocoapods
-<pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.3.0'</code></pre>
+<pre><code class="ruby language-ruby">pod 'MKBadge', '~> 1.3.1'</code></pre>
 
 ## Demo Figure
 <p align="center">
@@ -149,4 +155,5 @@ return temButton
 
 ## License
 MKBadge is released under an MIT license. See [LICENSE](LICENSE) for more information.
+
 
